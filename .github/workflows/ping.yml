@@ -1,0 +1,13 @@
+name: Keep Free Tier Apps Warm
+
+on:
+  schedule:
+    - cron: "*/19 * * * *"
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Curl the app
+        run: |
+          curl --silent "${{ secrets.PING_URL }}" > /dev/null
