@@ -3,6 +3,7 @@ name: Keep Free Tier Apps Warm
 on:
   schedule:
     - cron: "*/19 * * * *"
+  workflow_dispatch:
 
 jobs:
   ping:
